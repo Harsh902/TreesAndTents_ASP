@@ -7,7 +7,7 @@ The **SolutionCode.md** contains *comments*, to help you *understand the logic*.
 
 The **Solution.md** contains the *screenshot*, and the *locations of the tents.*
 
-You can also *directly download* the code from the **treesAndTents.lp[https://github.com/Harsh902/TreesAndTents_ASP/blob/main/treesAndTents.lp]** and run it in Clingo.
+You can also *directly download* the code from the **[treesAndTents.lp](https://github.com/Harsh902/TreesAndTents_ASP/blob/main/treesAndTents.lp)** and run it in Clingo.
 
 I use Visual Studio which has a Clingo extension, but other IDEs should also work.
 
