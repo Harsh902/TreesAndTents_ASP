@@ -20,5 +20,5 @@
 - (2,10)
 - (4,10)
 - (8,10)
-
-  ![You should see a picture of the puzzle, with the tents placed correctly](C:\Users\ASUS\OneDrive\Pictures\Sol39)
+  
+![You should see a picture of the puzzle, with the tents placed correctly](https://github.com/Harsh902/TreesAndTents_ASP/assets/24941411/eb7b838d-1486-46b0-a063-6b76f7d54406)
