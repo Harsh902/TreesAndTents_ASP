@@ -1,12 +1,18 @@
-% for number 39.
+% for puzzle number 39.
+
 % I keep the number of rows and columns on our board, to place our tents.
 
 `
 rows(1..10).
+`
+
+`
 cols(1..10).
 `
 
-% I make a list of all valid positions for the tree, we know where the trees are, so we set them exactly at those places.
+% I make a list of all valid positions for the tree, 
+
+% we know where the trees are, so we set them exactly at those places.
 
 `validPosTree(5,1;7,1;9,1;2,3;8,3;4,4;10,4;1,5;8,5;10,5;3,6;5,6;10,7;5,8;2,9;5,9;8,9;1,10;5,10;9,10).`
 
@@ -46,6 +52,7 @@ cols(1..10).
 
 % All the ones
 
+
 `
 :- not 1 {placeTent(A,3)} 1.
 `
@@ -57,6 +64,7 @@ cols(1..10).
 `
 :- not 1 {placeTent(A,9)} 1.
 `
+
 %now the twos:
 
 `
@@ -70,11 +78,13 @@ cols(1..10).
 `
 :- not 2 {placeTent(A, 4)} 2.
 `
-%now the three:
+
+% now the three:
 
 `
 :- not 3 {placeTent(A,10)} 3.
 `
+
 % now the 4:
 
 `
@@ -85,8 +95,9 @@ cols(1..10).
 :- not 4 {placeTent(A,8)} 4.
 `
 
-%for cols
-%now the twos:
+% for cols
+
+% now the twos:
 
 `
 :- not 2 {placeTent(5,A)} 2.
@@ -95,7 +106,8 @@ cols(1..10).
 `
 :- not 2 {placeTent(6,A)} 2.
 `
-%now the threes:
+
+% now the threes:
 
 `
 :- not 3 {placeTent(4, A)} 3.
@@ -111,26 +123,57 @@ cols(1..10).
 :- not 4 {placeTent(10, A)} 4.
 `
 
-%now the 5:
+% now the 5:
 
 `
 :- not 5 {placeTent(8,A)} 5.
 `
 
 
-%Now I make sure that tents are not horizontally or vertically adjacent.
+% Now I make sure that tents are not horizontally or vertically adjacent.
+
+`
 :- placeTent(A, B), placeTent(C, B), A-1 == C. 
+`
+
+`
 :- placeTent(A, B), placeTent(C, B), A+1 == C.
+`
+
+`
 :- placeTent(A, B), placeTent(A, C), B+1 == C.
+`
+
+`
 :- placeTent(A, B), placeTent(A, C), B-1 == C.
+`
 
-%Now I make sure that tents are not daigonally adjacent
+% Now I make sure that tents are not daigonally adjacent
+
+`
 :- placeTent(X, Y), placeTent(X+1,Y+1).
+`
+
+`
 :- placeTent(X, Y), placeTent(X-1,Y-1).
+`
+
+`
 :- placeTent(X, Y), placeTent(X+1,Y-1).
+`
+
+`
 :- placeTent(X, Y), placeTent(X-1,Y+1).
+`
 
+`
 :- plantTree(A, B), not placeTent(A+1, B); not placeTent(A-1, B); not placeTent(A, B-1); not placeTent(A, B+1).
-:- placeTent(X, Y), not plantTree(X+1, Y); not plantTree(X-1, Y); not plantTree(X, Y-1); not plantTree(X, Y+1).
+`
 
+`
+:- placeTent(X, Y), not plantTree(X+1, Y); not plantTree(X-1, Y); not plantTree(X, Y-1); not plantTree(X, Y+1).
+`
+
+`
 #show placeTent/2.
+`
