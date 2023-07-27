@@ -1,10 +1,12 @@
  For puzzle number 39.
 
+*For all of the comments, the code is written **below** them! Don't look above!!*
+
  I follow the pattern of looking at the column and then row, 
 
- so (3,5) means 3 steps to the right on the horizontal axis
+ so (3,5) means *3 steps to the right on the horizontal axis*
 
- And 5 steps down on the vertical axis.
+ And *5 steps down on the vertical axis.*
 
  I keep the number of rows and columns on our board, to place our tents.
 
@@ -19,9 +21,11 @@ cols(1..10).
 `
 
 
- We know where the trees are, so we set them exactly at those places.
+ Since we know where the trees are,
 
  I make a list of all valid positions for the tree, and set them exactly at those places.
+
+ (This information is given in the puzzle)
 
 `validPosTree(5,1;7,1;9,1;2,3;8,3;4,4;10,4;1,5;8,5;10,5;3,6;5,6;10,7;5,8;2,9;5,9;8,9;1,10;5,10;9,10).`
 
@@ -60,9 +64,11 @@ cols(1..10).
 
  I make a rule that, which can be read as:
 
- It cannot be the case that there is a tree in position (1,A) 
+ *It cannot be the case that there is a tree in position (1,A)*
 
- Which translates to: We cannot have a tree in the first column, in any row.
+ *Which translates to: We cannot have a tree in the first column, in any row.*
+ 
+ The same logic applies for the other columns where there cannot be any elements.
 
 `
 :- placeTent(1, A).
@@ -80,7 +86,7 @@ cols(1..10).
 :- placeTent(9, A).
 `
 
- The same logic, but for rows
+ The same logic, but for rows:
 
 `
 :- placeTent(A, 7).
@@ -92,7 +98,7 @@ cols(1..10).
 
  The below contraint translates to:
 
- It cannot be the case that we do not have exactly 1 tent in any column, for the 3rd row.
+ *It cannot be the case that we do not have exactly 1 tent in any column, for the 3rd row.*
 
 `
 :- not 1 {placeTent(A,3)} 1.
@@ -136,7 +142,7 @@ cols(1..10).
 :- not 4 {placeTent(A,8)} 4.
 `
 
- Now for cols
+ Now for cols:
 
  Now the cols with two tents:
 
@@ -154,7 +160,7 @@ cols(1..10).
 :- not 3 {placeTent(4, A)} 3.
 `
 
- Now the column with 4 tents
+ Now the column with 4 tents:
 
 `
 :- not 4 {placeTent(2, A)} 4.
@@ -207,9 +213,9 @@ cols(1..10).
 :- placeTent(X, Y), placeTent(X-1,Y+1).
 `
 
- Here, I make sure that for every tree that exists, there is a tent adjacent to it.
+ *Here, I make sure that for every tree that exists, there is a tent adjacent to it.*
 
- The tent can be up, dowm, left or right
+ *The tent can be up, dowm, left or right*
 
 `
 :- plantTree(A, B), not placeTent(A+1, B); not placeTent(A-1, B); not placeTent(A, B-1); not placeTent(A, B+1).
@@ -217,9 +223,9 @@ cols(1..10).
 
  Sometimes, one tent can be shared by 2 trees, so I make another constraint:
 
- For every tent, there must be a tree either above, below, or next to it. 
+ *For every tent, there must be a tree either above, below, or next to it.*
 
- This forces every tent to be at near one tree at least! 
+ *This forces every tent to be at near one tree at least!*
 
 `
 :- placeTent(X, Y), not plantTree(X+1, Y); not plantTree(X-1, Y); not plantTree(X, Y-1); not plantTree(X, Y+1).
@@ -228,3 +234,7 @@ cols(1..10).
 `
 #show placeTent/2.
 `
+
+*Congratulations, You made it this far!*
+
+*good luck, you got this!*
