@@ -100,6 +100,8 @@ cols(1..10).
 
  *It cannot be the case that we do not have exactly 1 tent in any column, for the 3rd row.*
 
+ Same logic applies to all the other rows
+
 `
 :- not 1 {placeTent(A,3)} 1.
 `
@@ -112,7 +114,7 @@ cols(1..10).
 :- not 1 {placeTent(A,9)} 1.
 `
 
- All rows with 2 elements only.
+ All rows with 2 elements only:
 
 `
 :- not 2 {placeTent(A, 1)} 2.
@@ -177,7 +179,7 @@ cols(1..10).
 `
 
 
- Now I make sure that tents are not horizontally or vertically adjacent.
+ Now I make sure that tents are not horizontally or vertically adjacent:
 
 `
 :- placeTent(A, B), placeTent(C, B), A-1 == C. 
@@ -195,7 +197,7 @@ cols(1..10).
 :- placeTent(A, B), placeTent(A, C), B-1 == C.
 `
 
- Now I make sure that tents are not daigonally adjacent
+ Now I make sure that tents are not daigonally adjacent:
 
 `
 :- placeTent(X, Y), placeTent(X+1,Y+1).
