@@ -3,7 +3,7 @@ A simple, generic solution to the Trees and Tents puzzle using ASP Clingo.
 
 ### Source for the puzzle: https://www-janko-at.translate.goog/Raetsel/Zeltlager/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=de
 
-The **[SolutionCode.md]()** contains *comments*, to help you *understand the logic*.
+The **[SolutionCode.md](https://github.com/Harsh902/TreesAndTents_ASP/blob/main/SolutionCode.md)** contains *comments*, to help you *understand the logic*.
 
 The **[Solution.md](https://github.com/Harsh902/TreesAndTents_ASP/blob/main/Solution.md)** contains the *screenshot*, and the *locations of the tents.*
 
