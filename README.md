@@ -1,6 +1,8 @@
 # TreesAndTents_ASP
 A simple, generic solution to the Trees and Tents puzzle using ASP Clingo. 
 
+I have used Puzzle number 39 as an example.
+
 ### Source for the puzzle: https://www-janko-at.translate.goog/Raetsel/Zeltlager/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=de
 
 The **[SolutionCode.md](https://github.com/Harsh902/TreesAndTents_ASP/blob/main/SolutionCode.md)** contains *comments*, to help you *understand the logic*.
